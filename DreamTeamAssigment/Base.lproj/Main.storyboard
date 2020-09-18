@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NuF-dM-LME">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Players-->
+        <scene sceneID="lKz-a3-e03">
+            <objects>
+                <viewController storyboardIdentifier="PlayersViewController" id="x7E-BI-aJH" customClass="PlayersViewController" customModule="DreamTeamAssigment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g3B-Cs-3dH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Qp-Ky-ooe">
+                                <rect key="frame" x="0.0" y="74" width="414" height="690"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex1-ig-oki">
+                                <rect key="frame" x="0.0" y="44" width="414" height="30"/>
+                                <state key="normal" title="Add Player"/>
+                                <connections>
+                                    <action selector="addNewPlayer:" destination="x7E-BI-aJH" eventType="touchUpInside" id="Isj-cO-icv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5gn-Wn-DFd" firstAttribute="trailing" secondItem="ex1-ig-oki" secondAttribute="trailing" id="EVO-Vv-DHT"/>
+                            <constraint firstItem="ex1-ig-oki" firstAttribute="top" secondItem="5gn-Wn-DFd" secondAttribute="top" id="Flu-3m-8dX"/>
+                            <constraint firstItem="4Qp-Ky-ooe" firstAttribute="top" secondItem="ex1-ig-oki" secondAttribute="bottom" id="MMy-Jw-1sG"/>
+                            <constraint firstItem="4Qp-Ky-ooe" firstAttribute="leading" secondItem="5gn-Wn-DFd" secondAttribute="leading" id="YcJ-Hx-Vw9"/>
+                            <constraint firstItem="4Qp-Ky-ooe" firstAttribute="top" secondItem="ex1-ig-oki" secondAttribute="bottom" id="dUg-Cd-lj3"/>
+                            <constraint firstItem="ex1-ig-oki" firstAttribute="leading" secondItem="5gn-Wn-DFd" secondAttribute="leading" id="evA-aV-2ev"/>
+                            <constraint firstItem="5gn-Wn-DFd" firstAttribute="trailing" secondItem="4Qp-Ky-ooe" secondAttribute="trailing" id="foE-RN-C3y"/>
+                            <constraint firstItem="5gn-Wn-DFd" firstAttribute="bottom" secondItem="4Qp-Ky-ooe" secondAttribute="bottom" id="ndC-93-xRC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5gn-Wn-DFd"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Players" selectedImage="person.crop.square.fill" catalog="system" id="gib-PP-ztO">
+                        <color key="badgeColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <toolbarItems>
+                        <barButtonItem systemItem="add" id="zMq-zc-ubo"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="playersTableView" destination="4Qp-Ky-ooe" id="ZWR-pl-7Xp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byw-TJ-09u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1139" y="23"/>
+        </scene>
+        <!--Teams-->
+        <scene sceneID="sVu-S9-nXI">
+            <objects>
+                <viewController storyboardIdentifier="TeamsViewController" id="a2y-g2-KMt" customClass="TeamsViewController" customModule="DreamTeamAssigment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y5A-B6-I7Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="te9-Ab-6xN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="720"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OTg-d3-wNJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Add Team">
+                                        <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addNewTeam:" destination="a2y-g2-KMt" eventType="touchUpInside" id="RAJ-30-JT1"/>
+                                    </connections>
+                                </button>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="te9-Ab-6xN" firstAttribute="leading" secondItem="Tsb-cb-jim" secondAttribute="leading" id="05u-PP-6IX"/>
+                            <constraint firstItem="te9-Ab-6xN" firstAttribute="top" secondItem="Tsb-cb-jim" secondAttribute="top" id="7Sq-W4-5c1"/>
+                            <constraint firstItem="Tsb-cb-jim" firstAttribute="trailing" secondItem="te9-Ab-6xN" secondAttribute="trailing" id="gQ4-vM-DWm"/>
+                            <constraint firstItem="Tsb-cb-jim" firstAttribute="bottom" secondItem="te9-Ab-6xN" secondAttribute="bottom" id="w3a-ty-fBD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tsb-cb-jim"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Teams" selectedImage="person.3.fill" catalog="system" id="NYD-kg-A0C">
+                        <color key="badgeColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="teamsTableView" destination="te9-Ab-6xN" id="S94-9q-Mn6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yY4-rT-gr1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1139" y="-627"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ADe-vD-QvN">
+            <objects>
+                <tabBarController id="NuF-dM-LME" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OpY-h4-sRo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="a2y-g2-KMt" kind="relationship" relationship="viewControllers" id="plT-2I-6oJ"/>
+                        <segue destination="x7E-BI-aJH" kind="relationship" relationship="viewControllers" id="pFF-Bh-e37"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Phl-zv-NdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="223" y="-303"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person.3.fill" catalog="system" width="71" height="34"/>
+        <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
