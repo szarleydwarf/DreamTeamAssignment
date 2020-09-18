@@ -17,6 +17,7 @@
 		D767A06D2515287B0022DE3B /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767A06C2515287B0022DE3B /* CoreDataController.swift */; };
 		D767A06F251538EC0022DE3B /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767A06E251538EC0022DE3B /* PlayersViewController.swift */; };
 		D767A071251538FE0022DE3B /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767A070251538FE0022DE3B /* TeamsViewController.swift */; };
+		D7FA7E2B2515455F00542E1F /* NewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FA7E2A2515455F00542E1F /* NewTeamViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D767A06C2515287B0022DE3B /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		D767A06E251538EC0022DE3B /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 		D767A070251538FE0022DE3B /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
+		D7FA7E2A2515455F00542E1F /* NewTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				D747FBB12514F25700362F04 /* Info.plist */,
 				D747FBA92514F25000362F04 /* DreamTeamAssigment.xcdatamodeld */,
 				D767A0722515390F0022DE3B /* Tabs */,
+				D7FA7E2A2515455F00542E1F /* NewTeamViewController.swift */,
 			);
 			path = DreamTeamAssigment;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				D747FBAB2514F25000362F04 /* DreamTeamAssigment.xcdatamodeld in Sources */,
 				D747FBA32514F25000362F04 /* SceneDelegate.swift in Sources */,
 				D767A071251538FE0022DE3B /* TeamsViewController.swift in Sources */,
+				D7FA7E2B2515455F00542E1F /* NewTeamViewController.swift in Sources */,
 				D767A06F251538EC0022DE3B /* PlayersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

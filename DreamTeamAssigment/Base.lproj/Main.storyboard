@@ -55,7 +55,7 @@
             </objects>
             <point key="canvasLocation" x="1139" y="23"/>
         </scene>
-        <!--Teams-->
+        <!--Teams View Controller-->
         <scene sceneID="sVu-S9-nXI">
             <objects>
                 <viewController storyboardIdentifier="TeamsViewController" id="a2y-g2-KMt" customClass="TeamsViewController" customModule="DreamTeamAssigment" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,7 +64,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="te9-Ab-6xN">
-                                <rect key="frame" x="0.0" y="44" width="414" height="720"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OTg-d3-wNJ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -87,10 +87,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tsb-cb-jim"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Teams" selectedImage="person.3.fill" catalog="system" id="NYD-kg-A0C">
-                        <color key="badgeColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="XdA-rM-F9T"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="teamsTableView" destination="te9-Ab-6xN" id="S94-9q-Mn6"/>
@@ -98,7 +96,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yY4-rT-gr1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1139" y="-627"/>
+            <point key="canvasLocation" x="2047.826086956522" y="-627.45535714285711"/>
+        </scene>
+        <!--New Team View Controller-->
+        <scene sceneID="Hwe-br-TTt">
+            <objects>
+                <viewController storyboardIdentifier="NewTeamViewController" id="pPg-e2-Zoh" customClass="NewTeamViewController" customModule="DreamTeamAssigment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Wk-tN-5kC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name " borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7B-H1-eKp">
+                                <rect key="frame" x="20" y="85" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-zd-J3G">
+                                <rect key="frame" x="10" y="54" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ham-g7-fid">
+                                <rect key="frame" x="30" y="173" width="354" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="pPg-e2-Zoh" eventType="touchUpInside" id="kMs-7Y-rqw"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Colour " borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-Sp-azT">
+                                <rect key="frame" x="20" y="129" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="p7B-H1-eKp" firstAttribute="top" secondItem="p7Q-zd-J3G" secondAttribute="bottom" constant="10" id="GnZ-yd-tDK"/>
+                            <constraint firstItem="fQT-w2-gJD" firstAttribute="trailing" secondItem="ham-g7-fid" secondAttribute="trailing" constant="30" id="HEA-as-4cI"/>
+                            <constraint firstItem="p7Q-zd-J3G" firstAttribute="leading" secondItem="fQT-w2-gJD" secondAttribute="leading" constant="10" id="IfN-uH-WFd"/>
+                            <constraint firstItem="p7B-H1-eKp" firstAttribute="leading" secondItem="fQT-w2-gJD" secondAttribute="leading" constant="20" id="Pxd-rw-m06"/>
+                            <constraint firstItem="fQT-w2-gJD" firstAttribute="trailing" secondItem="p7B-H1-eKp" secondAttribute="trailing" constant="20" id="auW-uk-16P"/>
+                            <constraint firstItem="gcu-Sp-azT" firstAttribute="leading" secondItem="fQT-w2-gJD" secondAttribute="leading" constant="20" id="gAS-q7-ec3"/>
+                            <constraint firstItem="fQT-w2-gJD" firstAttribute="trailing" secondItem="p7Q-zd-J3G" secondAttribute="trailing" constant="10" id="gLP-JN-Mug"/>
+                            <constraint firstItem="p7B-H1-eKp" firstAttribute="top" secondItem="p7Q-zd-J3G" secondAttribute="bottom" constant="10" id="gkw-N9-dOc"/>
+                            <constraint firstItem="ham-g7-fid" firstAttribute="leading" secondItem="fQT-w2-gJD" secondAttribute="leading" constant="30" id="la8-AX-RVT"/>
+                            <constraint firstItem="gcu-Sp-azT" firstAttribute="top" secondItem="p7B-H1-eKp" secondAttribute="bottom" constant="10" id="mrr-P0-6Al"/>
+                            <constraint firstItem="p7Q-zd-J3G" firstAttribute="top" secondItem="fQT-w2-gJD" secondAttribute="top" constant="10" id="rCi-WC-TJp"/>
+                            <constraint firstItem="ham-g7-fid" firstAttribute="top" secondItem="gcu-Sp-azT" secondAttribute="bottom" constant="10" id="sYL-Th-3le"/>
+                            <constraint firstItem="fQT-w2-gJD" firstAttribute="trailing" secondItem="gcu-Sp-azT" secondAttribute="trailing" constant="20" id="vTw-Af-KQ0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fQT-w2-gJD"/>
+                    </view>
+                    <connections>
+                        <outlet property="teamColourTF" destination="gcu-Sp-azT" id="wgf-l4-UUh"/>
+                        <outlet property="teamNameTF" destination="p7B-H1-eKp" id="Us1-5e-dTV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rNS-fc-df7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2747.826086956522" y="-623.4375"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ADe-vD-QvN">
@@ -110,13 +167,34 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="a2y-g2-KMt" kind="relationship" relationship="viewControllers" id="plT-2I-6oJ"/>
+                        <segue destination="oIO-Jx-o1k" kind="relationship" relationship="viewControllers" id="plT-2I-6oJ"/>
                         <segue destination="x7E-BI-aJH" kind="relationship" relationship="viewControllers" id="pFF-Bh-e37"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Phl-zv-NdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="223" y="-303"/>
+        </scene>
+        <!--Teams-->
+        <scene sceneID="Bwf-qH-DKd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oIO-Jx-o1k" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Teams" selectedImage="person.3.fill" catalog="system" id="NYD-kg-A0C">
+                        <color key="badgeColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0VR-zN-uJS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a2y-g2-KMt" kind="relationship" relationship="rootViewController" id="PBg-QU-zp6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rYb-oF-HLK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137.68115942029" y="-627.45535714285711"/>
         </scene>
     </scenes>
     <resources>
