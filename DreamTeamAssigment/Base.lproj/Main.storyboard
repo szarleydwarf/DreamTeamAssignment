@@ -68,8 +68,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M61-Gr-n7W">
+                                <rect key="frame" x="10" y="219" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKH-oK-uRJ">
-                                <rect key="frame" x="10" y="219" width="394" height="30"/>
+                                <rect key="frame" x="10" y="263" width="394" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="save:" destination="qWG-dl-uE8" eventType="touchUpInside" id="dXg-PW-mK8"/>
@@ -78,9 +83,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="CKH-oK-uRJ" firstAttribute="top" secondItem="M61-Gr-n7W" secondAttribute="bottom" constant="10" id="1AP-W8-S23"/>
                             <constraint firstItem="MOl-Ut-itN" firstAttribute="top" secondItem="X3w-81-S9i" secondAttribute="bottom" constant="10" id="2ri-c8-sh3"/>
+                            <constraint firstItem="M61-Gr-n7W" firstAttribute="top" secondItem="MOl-Ut-itN" secondAttribute="bottom" constant="10" id="51J-WW-ByQ"/>
                             <constraint firstItem="MOl-Ut-itN" firstAttribute="leading" secondItem="IoY-VZ-P9V" secondAttribute="leading" constant="10" id="6MY-QM-Lm4"/>
-                            <constraint firstItem="CKH-oK-uRJ" firstAttribute="top" secondItem="MOl-Ut-itN" secondAttribute="bottom" constant="10" id="8Bf-ii-UTd"/>
+                            <constraint firstItem="IoY-VZ-P9V" firstAttribute="trailing" secondItem="M61-Gr-n7W" secondAttribute="trailing" constant="10" id="81C-C2-hNU"/>
                             <constraint firstItem="IoY-VZ-P9V" firstAttribute="trailing" secondItem="X3w-81-S9i" secondAttribute="trailing" constant="10" id="Dsa-KC-V6d"/>
                             <constraint firstItem="oX2-zq-SP7" firstAttribute="leading" secondItem="IoY-VZ-P9V" secondAttribute="leading" constant="10" id="ENm-5E-rn6"/>
                             <constraint firstItem="IoY-VZ-P9V" firstAttribute="trailing" secondItem="MOl-Ut-itN" secondAttribute="trailing" constant="10" id="HAQ-de-4af"/>
@@ -88,6 +95,7 @@
                             <constraint firstItem="oX2-zq-SP7" firstAttribute="top" secondItem="IoY-VZ-P9V" secondAttribute="top" constant="10" id="XfO-wu-ZgS"/>
                             <constraint firstItem="CKH-oK-uRJ" firstAttribute="leading" secondItem="IoY-VZ-P9V" secondAttribute="leading" constant="10" id="brd-cA-ieU"/>
                             <constraint firstItem="X3w-81-S9i" firstAttribute="leading" secondItem="IoY-VZ-P9V" secondAttribute="leading" constant="10" id="fh4-DU-DKQ"/>
+                            <constraint firstItem="M61-Gr-n7W" firstAttribute="leading" secondItem="IoY-VZ-P9V" secondAttribute="leading" constant="10" id="lnA-Cg-ilG"/>
                             <constraint firstItem="IoY-VZ-P9V" firstAttribute="trailing" secondItem="CKH-oK-uRJ" secondAttribute="trailing" constant="10" id="m64-hn-ZPw"/>
                             <constraint firstItem="IoY-VZ-P9V" firstAttribute="trailing" secondItem="oX2-zq-SP7" secondAttribute="trailing" constant="10" id="tDc-mM-pdN"/>
                         </constraints>
@@ -97,6 +105,7 @@
                     <connections>
                         <outlet property="playerAgeTF" destination="MOl-Ut-itN" id="oOm-fc-M4o"/>
                         <outlet property="playerNameTF" destination="X3w-81-S9i" id="3H5-AV-VLs"/>
+                        <outlet property="teamNameTF" destination="M61-Gr-n7W" id="dSC-GW-DiA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odt-Uq-4FU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

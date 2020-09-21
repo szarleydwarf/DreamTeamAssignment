@@ -43,6 +43,11 @@ class TeamsViewController: UIViewController {
     @IBAction func addNewTeam(_ sender: UIButton) {
         
     }
+    
+    func getTeams() -> [Team]? {
+        let teams = self.fetchResultCtrl.fetchedObjects
+        return teams
+    }
 }
 
 
