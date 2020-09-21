@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D747FBA12514F25000362F04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747FBA02514F25000362F04 /* AppDelegate.swift */; };
 		D747FBA32514F25000362F04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747FBA22514F25000362F04 /* SceneDelegate.swift */; };
-		D747FBA52514F25000362F04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747FBA42514F25000362F04 /* ViewController.swift */; };
 		D747FBA82514F25000362F04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D747FBA62514F25000362F04 /* Main.storyboard */; };
 		D747FBAB2514F25000362F04 /* DreamTeamAssigment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D747FBA92514F25000362F04 /* DreamTeamAssigment.xcdatamodeld */; };
 		D747FBAD2514F25700362F04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D747FBAC2514F25700362F04 /* Assets.xcassets */; };
@@ -24,7 +23,6 @@
 		D747FB9D2514F25000362F04 /* DreamTeamAssigment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamTeamAssigment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D747FBA02514F25000362F04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D747FBA22514F25000362F04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D747FBA42514F25000362F04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D747FBA72514F25000362F04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D747FBAA2514F25000362F04 /* DreamTeamAssigment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamTeamAssigment.xcdatamodel; sourceTree = "<group>"; };
 		D747FBAC2514F25700362F04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 			children = (
 				D747FBA02514F25000362F04 /* AppDelegate.swift */,
 				D747FBA22514F25000362F04 /* SceneDelegate.swift */,
-				D747FBA42514F25000362F04 /* ViewController.swift */,
 				D767A06C2515287B0022DE3B /* CoreDataController.swift */,
 				D747FBA62514F25000362F04 /* Main.storyboard */,
 				D747FBAC2514F25700362F04 /* Assets.xcassets */,
@@ -161,7 +158,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D747FBA52514F25000362F04 /* ViewController.swift in Sources */,
 				D747FBA12514F25000362F04 /* AppDelegate.swift in Sources */,
 				D767A06D2515287B0022DE3B /* CoreDataController.swift in Sources */,
 				D747FBAB2514F25000362F04 /* DreamTeamAssigment.xcdatamodeld in Sources */,

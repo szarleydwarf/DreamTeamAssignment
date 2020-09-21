@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "70D10057-45FA-4035-B46D-E34771EDEF9E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A1445AE-5DB8-42B8-8702-2EC3A7AA2E1D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DreamTeamAssigment/Tabs/TeamsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "fetchResultCtrl"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "8A1445AE-5DB8-42B8-8702-2EC3A7AA2E1D - d1f0b1479d8f9c61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DreamTeamAssigment.TeamsViewController.fetchResultCtrl.getter : __C.NSFetchedResultsController&lt;DreamTeamAssigment.Team&gt;"
+                  moduleName = "DreamTeamAssigment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/theappexperts/SwiftProjects/DreamTeamAssigment/DreamTeamAssigment/Tabs/TeamsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "374">
+               </Location>
+               <Location
+                  uuid = "8A1445AE-5DB8-42B8-8702-2EC3A7AA2E1D - 32100591c8d461b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __C.NSFetchedResultsController&lt;DreamTeamAssigment.Team&gt; in DreamTeamAssigment.TeamsViewController.fetchResultCtrl.getter : __C.NSFetchedResultsController&lt;DreamTeamAssigment.Team&gt;"
+                  moduleName = "DreamTeamAssigment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/theappexperts/SwiftProjects/DreamTeamAssigment/DreamTeamAssigment/Tabs/TeamsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "33">
+               </Location>
+               <Location
+                  uuid = "8A1445AE-5DB8-42B8-8702-2EC3A7AA2E1D - 6e3818ca3251786d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DreamTeamAssigment.TeamsViewController.fetchResultCtrl.setter : __C.NSFetchedResultsController&lt;DreamTeamAssigment.Team&gt;"
+                  moduleName = "DreamTeamAssigment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/theappexperts/SwiftProjects/DreamTeamAssigment/DreamTeamAssigment/Tabs/TeamsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "8A1445AE-5DB8-42B8-8702-2EC3A7AA2E1D - 9ff20664b854155c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DreamTeamAssigment.TeamsViewController.fetchResultCtrl.modify : __C.NSFetchedResultsController&lt;DreamTeamAssigment.Team&gt;"
+                  moduleName = "DreamTeamAssigment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/theappexperts/SwiftProjects/DreamTeamAssigment/DreamTeamAssigment/Tabs/TeamsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "8A1445AE-5DB8-42B8-8702-2EC3A7AA2E1D - f1137cbc8320ad7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DreamTeamAssigment.TeamsViewController.fetchResultCtrl.modify : __C.NSFetchedResultsController&lt;DreamTeamAssigment.Team&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "DreamTeamAssigment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/theappexperts/SwiftProjects/DreamTeamAssigment/DreamTeamAssigment/Tabs/TeamsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "8A1445AE-5DB8-42B8-8702-2EC3A7AA2E1D - a7e859339cf90f20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DreamTeamAssigment.TeamsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; DreamTeamAssigment.TeamsViewController"
+                  moduleName = "DreamTeamAssigment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/theappexperts/SwiftProjects/DreamTeamAssigment/DreamTeamAssigment/Tabs/TeamsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "309">
+               </Location>
+               <Location
+                  uuid = "8A1445AE-5DB8-42B8-8702-2EC3A7AA2E1D - 19653291239b5e2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DreamTeamAssigment.TeamsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;DreamTeamAssigment.TeamsViewController&gt;"
+                  moduleName = "DreamTeamAssigment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/theappexperts/SwiftProjects/DreamTeamAssigment/DreamTeamAssigment/Tabs/TeamsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "232">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47DADAB5-FE69-4FC8-A7B7-FED6593A2571"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DreamTeamAssigment/Tabs/TeamsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FADDF605-5321-4FE5-8779-1857669321BE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DreamTeamAssigment/Tabs/TeamsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
