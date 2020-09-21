@@ -36,11 +36,72 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="playersTableView" destination="4Qp-Ky-ooe" id="ZWR-pl-7Xp"/>
+                        <segue destination="qWG-dl-uE8" kind="show" id="l2z-nG-C3x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byw-TJ-09u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2047.826086956522" y="22.767857142857142"/>
+        </scene>
+        <!--Edit Player View Controller-->
+        <scene sceneID="gY8-f3-fie">
+            <objects>
+                <viewController storyboardIdentifier="EditPlayerViewController" id="qWG-dl-uE8" customClass="EditPlayerViewController" customModule="DreamTeamAssigment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vN0-SQ-HnZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editing Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oX2-zq-SP7">
+                                <rect key="frame" x="10" y="98" width="394" height="23"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X3w-81-S9i">
+                                <rect key="frame" x="10" y="131" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MOl-Ut-itN">
+                                <rect key="frame" x="10" y="175" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKH-oK-uRJ">
+                                <rect key="frame" x="10" y="219" width="394" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="qWG-dl-uE8" eventType="touchUpInside" id="dXg-PW-mK8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MOl-Ut-itN" firstAttribute="top" secondItem="X3w-81-S9i" secondAttribute="bottom" constant="10" id="2ri-c8-sh3"/>
+                            <constraint firstItem="MOl-Ut-itN" firstAttribute="leading" secondItem="IoY-VZ-P9V" secondAttribute="leading" constant="10" id="6MY-QM-Lm4"/>
+                            <constraint firstItem="CKH-oK-uRJ" firstAttribute="top" secondItem="MOl-Ut-itN" secondAttribute="bottom" constant="10" id="8Bf-ii-UTd"/>
+                            <constraint firstItem="IoY-VZ-P9V" firstAttribute="trailing" secondItem="X3w-81-S9i" secondAttribute="trailing" constant="10" id="Dsa-KC-V6d"/>
+                            <constraint firstItem="oX2-zq-SP7" firstAttribute="leading" secondItem="IoY-VZ-P9V" secondAttribute="leading" constant="10" id="ENm-5E-rn6"/>
+                            <constraint firstItem="IoY-VZ-P9V" firstAttribute="trailing" secondItem="MOl-Ut-itN" secondAttribute="trailing" constant="10" id="HAQ-de-4af"/>
+                            <constraint firstItem="X3w-81-S9i" firstAttribute="top" secondItem="oX2-zq-SP7" secondAttribute="bottom" constant="10" id="VnH-Fi-qiV"/>
+                            <constraint firstItem="oX2-zq-SP7" firstAttribute="top" secondItem="IoY-VZ-P9V" secondAttribute="top" constant="10" id="XfO-wu-ZgS"/>
+                            <constraint firstItem="CKH-oK-uRJ" firstAttribute="leading" secondItem="IoY-VZ-P9V" secondAttribute="leading" constant="10" id="brd-cA-ieU"/>
+                            <constraint firstItem="X3w-81-S9i" firstAttribute="leading" secondItem="IoY-VZ-P9V" secondAttribute="leading" constant="10" id="fh4-DU-DKQ"/>
+                            <constraint firstItem="IoY-VZ-P9V" firstAttribute="trailing" secondItem="CKH-oK-uRJ" secondAttribute="trailing" constant="10" id="m64-hn-ZPw"/>
+                            <constraint firstItem="IoY-VZ-P9V" firstAttribute="trailing" secondItem="oX2-zq-SP7" secondAttribute="trailing" constant="10" id="tDc-mM-pdN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IoY-VZ-P9V"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qn0-u6-CBH"/>
+                    <connections>
+                        <outlet property="playerAgeTF" destination="MOl-Ut-itN" id="oOm-fc-M4o"/>
+                        <outlet property="playerNameTF" destination="X3w-81-S9i" id="3H5-AV-VLs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odt-Uq-4FU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2851" y="303"/>
         </scene>
         <!--Teams View Controller-->
         <scene sceneID="sVu-S9-nXI">
@@ -67,7 +128,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="XdA-rM-F9T">
                         <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OTg-d3-wNJ">
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OTg-d3-wNJ">
                             <rect key="frame" x="172.5" y="7" width="69" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Add Team">
@@ -97,13 +158,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name " borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7B-H1-eKp">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name " borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7B-H1-eKp">
                                 <rect key="frame" x="20" y="129" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-zd-J3G">
                                 <rect key="frame" x="10" y="98" width="394" height="21"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -115,7 +177,7 @@
                                     <action selector="save:" destination="pPg-e2-Zoh" eventType="touchUpInside" id="kMs-7Y-rqw"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Colour " borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-Sp-azT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Colour " borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-Sp-azT">
                                 <rect key="frame" x="20" y="173" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -147,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNS-fc-df7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3139" y="-430"/>
+            <point key="canvasLocation" x="2852" y="-441"/>
         </scene>
         <!--New Player View Controller-->
         <scene sceneID="X6L-p6-6hd">
@@ -159,6 +221,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adding New Player to Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lb-EE-8yM">
                                 <rect key="frame" x="0.0" y="98" width="414" height="21"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -209,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kN2-pQ-6Gs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2748" y="-1366"/>
+            <point key="canvasLocation" x="2852" y="-1270"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ADe-vD-QvN">

@@ -22,7 +22,7 @@ class TeamsViewController: UIViewController {
         fetchedRequest.fetchBatchSize = 15
             
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchedRequest, managedObjectContext: coreDataCtr.mainCtx, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedResultsController.delegate = self as? NSFetchedResultsControllerDelegate
+        fetchedResultsController.delegate = self as NSFetchedResultsControllerDelegate
         return fetchedResultsController
     }()
     
@@ -41,10 +41,7 @@ class TeamsViewController: UIViewController {
     }
     
     @IBAction func addNewTeam(_ sender: UIButton) {
-        print("You tap + team btn")
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        guard let addNewTeamViewController = storyboard.instantiateViewController(identifier: "NewTeamViewController") as? NewTeamViewController else { return  }
-//        self.navigationController?.pushViewController(addNewTeamViewController, animated: true)
+        
     }
 }
 
