@@ -52,7 +52,6 @@ extension TeamsViewController : UITableViewDataSource, UITableViewDelegate{
         guard let sections = fetchResultCtrl.sections else {
             fatalError("No sections no rows")
         }
-        
         return sections[section].numberOfObjects
     }
     

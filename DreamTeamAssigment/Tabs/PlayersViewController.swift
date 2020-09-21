@@ -22,7 +22,7 @@ class PlayersViewController: UIViewController {
         fetchedRequest.fetchBatchSize = 15
             
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchedRequest, managedObjectContext: coreDataCtr.mainCtx, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedResultsController.delegate = self as? NSFetchedResultsControllerDelegate
+        fetchedResultsController.delegate = self as NSFetchedResultsControllerDelegate
         return fetchedResultsController
     }()
 
@@ -42,18 +42,33 @@ class PlayersViewController: UIViewController {
     
     @IBAction func addNewPlayer(_ sender: UIButton) {
     }
+    
+    func getSections() -> [NSFetchedResultsSectionInfo]{
+        guard let sections = fetchResultCtrl.sections else {
+                  fatalError("No sections no rows")
+        }
+        return sections
+    }
 }
 
 extension PlayersViewController : UITableViewDataSource, UITableViewDelegate{
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sections = fetchResultCtrl.sections else {
-            fatalError("No sections no rows")
-        }
-        
-        return sections[section].numberOfObjects
+        return getSections()[section].numberOfObjects
     }
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return getSections().count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sections = getSections()
+        if section < sections.count {
+            return sections[section] as? String
+        }
+        return nil
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
         if cell.detailTextLabel == nil {
@@ -70,11 +85,77 @@ extension PlayersViewController : UITableViewDataSource, UITableViewDelegate{
         cell.detailTextLabel?.text = "Age: \(player.age), In team: \(player.relationshipWithTeam?.teamName ?? "NA")"
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let editPlayerViewController = storyboard.instantiateViewController(identifier: "EditPlayerViewController") as EditPlayerViewController
-
+        let player = fetchResultCtrl.object(at: indexPath)
+        editPlayerViewController.player = player
         
-        self.navigationController?.pushViewController(editPlayerViewController, animated: true)
+    self.navigationController?.pushViewController(editPlayerViewController, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .default, title: "Remove"){
+            (action, indexPath) in
+            let itemToRemove = self.fetchResultCtrl.object(at: indexPath)
+            self.coreDataCtr.mainCtx.delete(itemToRemove)
+        }
+        let editAction = UITableViewRowAction(style: .default, title: "Edit"){
+        (action, indexPath) in
+            let itemToUpdate = self.fetchResultCtrl.object(at: indexPath)
+            self.coreDataCtr.mainCtx.refresh(itemToUpdate, mergeChanges: true)
+        }
+        return [deleteAction, editAction]
+    }
+}
+
+extension PlayersViewController : NSFetchedResultsControllerDelegate {
+    private var rowAnimation : UITableView.RowAnimation {
+        return .fade
+    }
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+       playersTableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+       playersTableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+            case .insert:
+                if let newIndexPath = newIndexPath {
+                    playersTableView.insertRows(at: [newIndexPath], with: .fade)
+            }
+            case .delete:
+                if let indexPath = indexPath {
+                    playersTableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            case .update:
+                if let indexPath = indexPath {
+                    playersTableView.reloadRows(at: [indexPath], with: .fade)
+            }
+            case .move:
+                if let indexPath = indexPath, let newIndexPath = newIndexPath {
+                    playersTableView.moveRow(at: indexPath, to: newIndexPath)
+            }
+            @unknown default:
+                fatalError("@unknown default")
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+    switch type {
+        case .insert:
+           playersTableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
+        case .delete:
+           playersTableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
+        case .move:
+           break
+        case .update:
+           break
+        }
     }
 }

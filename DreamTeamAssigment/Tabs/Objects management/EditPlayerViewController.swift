@@ -8,25 +8,30 @@
 
 import UIKit
 
+
 class EditPlayerViewController: UIViewController {
     
     @IBOutlet weak var playerNameTF: UITextField!
     @IBOutlet weak var playerAgeTF: UITextField!
     private let coreDataCtrl = CoreDataController.shared
+    
+    var player:Player?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.playerNameTF.text = self.player?.name
+        self.playerAgeTF.text = "\(self.player?.age ?? 0)"
     }
     
     @IBAction func save(_ sender: UIButton) {
         guard let name = playerNameTF.text, let age = playerAgeTF.text else {return}
-        
+      
         DispatchQueue.main.async {
-            let player = Player(context: self.coreDataCtrl.mainCtx)
-            player.name = name
-            if let age = Int16(age) {
-                player.age = age
-            }
+            if let oldPlayerRecord = self.player {
+                  oldPlayerRecord.setValue(name, forKey: "name")
+                  oldPlayerRecord.setValue(Int16(age), forKey: "age")
+              }
+            
             self.coreDataCtrl.save()
             self.navigationController?.popViewController(animated: true)
         }
