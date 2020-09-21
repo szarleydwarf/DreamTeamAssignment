@@ -50,6 +50,7 @@ class TeamsViewController: UIViewController {
 
 
 extension TeamsViewController : UITableViewDataSource, UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = fetchResultCtrl.sections else {
             fatalError("No sections no rows")
@@ -59,7 +60,10 @@ extension TeamsViewController : UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
+        var cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
+        if cell.detailTextLabel == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: self.cellIdentifier)
+        }
         let team = fetchResultCtrl.object(at: indexPath)
         update(cell, with: team)
         
@@ -82,7 +86,12 @@ extension TeamsViewController : UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newPlayerViewController = storyboard.instantiateViewController(identifier: "NewPlayerViewController") as NewPlayerViewController
+              let team = fetchResultCtrl.object(at: indexPath)
         
+        newPlayerViewController.team = team
+        self.navigationController?.pushViewController(newPlayerViewController, animated: true)
     }
 }
 

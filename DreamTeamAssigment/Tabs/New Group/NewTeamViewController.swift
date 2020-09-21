@@ -17,6 +17,7 @@ class NewTeamViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func save(_ sender: UIButton) {
         guard let teamName = teamNameTF.text, let teamColour = teamColourTF.text else {
             return
@@ -27,6 +28,7 @@ class NewTeamViewController: UIViewController {
             newTeam.teamName = teamName
             newTeam.teamColour = teamColour
             self.coreDataCtr.save()
+            self.navigationController?.popViewController(animated: true)
         }
     }
     

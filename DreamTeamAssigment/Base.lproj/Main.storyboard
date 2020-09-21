@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Players-->
+        <!--Players View Controller-->
         <scene sceneID="lKz-a3-e03">
             <objects>
                 <viewController storyboardIdentifier="PlayersViewController" id="x7E-BI-aJH" customClass="PlayersViewController" customModule="DreamTeamAssigment" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,36 +16,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Qp-Ky-ooe">
-                                <rect key="frame" x="0.0" y="74" width="414" height="690"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex1-ig-oki">
-                                <rect key="frame" x="0.0" y="44" width="414" height="30"/>
-                                <state key="normal" title="Add Player"/>
-                                <connections>
-                                    <action selector="addNewPlayer:" destination="x7E-BI-aJH" eventType="touchUpInside" id="Isj-cO-icv"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="5gn-Wn-DFd" firstAttribute="trailing" secondItem="ex1-ig-oki" secondAttribute="trailing" id="EVO-Vv-DHT"/>
-                            <constraint firstItem="ex1-ig-oki" firstAttribute="top" secondItem="5gn-Wn-DFd" secondAttribute="top" id="Flu-3m-8dX"/>
-                            <constraint firstItem="4Qp-Ky-ooe" firstAttribute="top" secondItem="ex1-ig-oki" secondAttribute="bottom" id="MMy-Jw-1sG"/>
                             <constraint firstItem="4Qp-Ky-ooe" firstAttribute="leading" secondItem="5gn-Wn-DFd" secondAttribute="leading" id="YcJ-Hx-Vw9"/>
-                            <constraint firstItem="4Qp-Ky-ooe" firstAttribute="top" secondItem="ex1-ig-oki" secondAttribute="bottom" id="dUg-Cd-lj3"/>
-                            <constraint firstItem="ex1-ig-oki" firstAttribute="leading" secondItem="5gn-Wn-DFd" secondAttribute="leading" id="evA-aV-2ev"/>
                             <constraint firstItem="5gn-Wn-DFd" firstAttribute="trailing" secondItem="4Qp-Ky-ooe" secondAttribute="trailing" id="foE-RN-C3y"/>
                             <constraint firstItem="5gn-Wn-DFd" firstAttribute="bottom" secondItem="4Qp-Ky-ooe" secondAttribute="bottom" id="ndC-93-xRC"/>
+                            <constraint firstItem="4Qp-Ky-ooe" firstAttribute="top" secondItem="5gn-Wn-DFd" secondAttribute="top" id="plO-P0-gju"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5gn-Wn-DFd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Players" selectedImage="person.crop.square.fill" catalog="system" id="gib-PP-ztO">
-                        <color key="badgeColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
                     <toolbarItems>
                         <barButtonItem systemItem="add" id="zMq-zc-ubo"/>
                     </toolbarItems>
+                    <navigationItem key="navigationItem" id="aLA-Ig-Jrs"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="playersTableView" destination="4Qp-Ky-ooe" id="ZWR-pl-7Xp"/>
@@ -53,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byw-TJ-09u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1139" y="23"/>
+            <point key="canvasLocation" x="2047.826086956522" y="22.767857142857142"/>
         </scene>
         <!--Teams View Controller-->
         <scene sceneID="sVu-S9-nXI">
@@ -95,6 +82,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="teamsTableView" destination="te9-Ab-6xN" id="S94-9q-Mn6"/>
+                        <segue destination="R5i-nb-kVD" kind="show" id="leg-zM-SY3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yY4-rT-gr1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -159,7 +147,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNS-fc-df7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2747.826086956522" y="-623.4375"/>
+            <point key="canvasLocation" x="3139" y="-430"/>
+        </scene>
+        <!--New Player View Controller-->
+        <scene sceneID="X6L-p6-6hd">
+            <objects>
+                <viewController storyboardIdentifier="NewPlayerViewController" id="R5i-nb-kVD" customClass="NewPlayerViewController" customModule="DreamTeamAssigment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M3B-Xp-5Ik">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adding New Player to Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lb-EE-8yM">
+                                <rect key="frame" x="0.0" y="98" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ip9-TP-x0b">
+                                <rect key="frame" x="10" y="129" width="394" height="34"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Age" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggs-hr-XnX">
+                                <rect key="frame" x="10" y="173" width="394" height="34"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0H-cr-9fu">
+                                <rect key="frame" x="10" y="217" width="394" height="30"/>
+                                <state key="normal" title="Save Player"/>
+                                <connections>
+                                    <action selector="savePlayer:" destination="R5i-nb-kVD" eventType="touchUpInside" id="G1B-zr-Fig"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ggs-hr-XnX" firstAttribute="top" secondItem="ip9-TP-x0b" secondAttribute="bottom" constant="10" id="7hE-4v-jcx"/>
+                            <constraint firstItem="1V1-NM-ECc" firstAttribute="trailing" secondItem="3lb-EE-8yM" secondAttribute="trailing" id="9s4-Uu-J2n"/>
+                            <constraint firstItem="ggs-hr-XnX" firstAttribute="leading" secondItem="1V1-NM-ECc" secondAttribute="leading" constant="10" id="JYP-mj-87G"/>
+                            <constraint firstItem="ip9-TP-x0b" firstAttribute="top" secondItem="3lb-EE-8yM" secondAttribute="bottom" constant="10" id="MaO-ud-UUS"/>
+                            <constraint firstItem="1V1-NM-ECc" firstAttribute="trailing" secondItem="O0H-cr-9fu" secondAttribute="trailing" constant="10" id="NC9-NC-FFp"/>
+                            <constraint firstItem="3lb-EE-8yM" firstAttribute="leading" secondItem="1V1-NM-ECc" secondAttribute="leading" id="OqQ-Ez-HQm"/>
+                            <constraint firstItem="O0H-cr-9fu" firstAttribute="top" secondItem="ggs-hr-XnX" secondAttribute="bottom" constant="10" id="S04-kG-Dq0"/>
+                            <constraint firstItem="1V1-NM-ECc" firstAttribute="trailing" secondItem="ip9-TP-x0b" secondAttribute="trailing" constant="10" id="eY0-gU-Bcd"/>
+                            <constraint firstItem="O0H-cr-9fu" firstAttribute="leading" secondItem="1V1-NM-ECc" secondAttribute="leading" constant="10" id="gzf-sy-3pP"/>
+                            <constraint firstItem="3lb-EE-8yM" firstAttribute="top" secondItem="1V1-NM-ECc" secondAttribute="top" constant="10" id="o68-d8-2Cw"/>
+                            <constraint firstItem="ggs-hr-XnX" firstAttribute="trailing" secondItem="1V1-NM-ECc" secondAttribute="trailing" constant="-10" id="uqS-8q-iBy"/>
+                            <constraint firstItem="ip9-TP-x0b" firstAttribute="leading" secondItem="1V1-NM-ECc" secondAttribute="leading" constant="10" id="xbM-t8-YUp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1V1-NM-ECc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pI4-CV-TVh"/>
+                    <connections>
+                        <outlet property="PlayerAgeTF" destination="ggs-hr-XnX" id="bhV-jz-VUe"/>
+                        <outlet property="PlayerNameTF" destination="ip9-TP-x0b" id="EUk-Lc-9pb"/>
+                        <outlet property="titleLabel" destination="3lb-EE-8yM" id="JAc-ST-lxa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kN2-pQ-6Gs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2748" y="-1366"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ADe-vD-QvN">
@@ -172,7 +222,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="oIO-Jx-o1k" kind="relationship" relationship="viewControllers" id="plT-2I-6oJ"/>
-                        <segue destination="x7E-BI-aJH" kind="relationship" relationship="viewControllers" id="pFF-Bh-e37"/>
+                        <segue destination="MXf-nB-g6F" kind="relationship" relationship="viewControllers" id="pFF-Bh-e37"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Phl-zv-NdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -199,6 +249,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYb-oF-HLK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1137.68115942029" y="-627.45535714285711"/>
+        </scene>
+        <!--Players-->
+        <scene sceneID="kKR-N5-r0q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MXf-nB-g6F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Players" selectedImage="person.crop.square.fill" catalog="system" id="gib-PP-ztO">
+                        <color key="badgeColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xPk-RQ-BE4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="x7E-BI-aJH" kind="relationship" relationship="rootViewController" id="LRi-S7-gDX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBi-Qc-Dqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137.68115942029" y="22.767857142857142"/>
         </scene>
     </scenes>
     <resources>
