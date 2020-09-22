@@ -15,57 +15,42 @@ class EditPlayerViewController: UIViewController {
     @IBOutlet weak var playerAgeTF: UITextField!
     @IBOutlet weak var teamNameTF: UITextField!
     private let coreDataCtrl = CoreDataController.shared
-    let picker:UIPickerView? = UIPickerView()
     var player:Player?
-    let teamsClass = TeamsViewController()
+    var teams:[Team]=[]
+    
+    let teamVievController: TeamsViewController = TeamsViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.playerNameTF.text = self.player?.name
         self.playerAgeTF.text = "\(self.player?.age ?? 0)"
+
         if let teamName = self.player?.relationshipWithTeam?.teamName {
             self.teamNameTF.text = teamName
         }
-        picker?.delegate = self
-        self.teamNameTF.inputView = picker
+        
+        do {
+            try self.teamVievController.fetchResultCtrl.performFetch()
+        } catch let err as NSError{
+            print("Edit player fetchCtrl ERR \(err.userInfo) >>> \(err.localizedDescription) >>> \(err) <<<")
+        }
+        if let fetchedTeams = self.teamVievController.fetchResultCtrl.fetchedObjects{
+            self.teams = fetchedTeams
+        }
     }
     
     @IBAction func save(_ sender: UIButton) {
         guard let name = playerNameTF.text, let age = playerAgeTF.text else {return}
       
         DispatchQueue.main.async {
-            if let oldPlayerRecord = self.player {
-                  oldPlayerRecord.setValue(name, forKey: "name")
-                  oldPlayerRecord.setValue(Int16(age), forKey: "age")
-              }
+            if let playerRecord = self.player {
+              playerRecord.setValue(name, forKey: "name")
+              playerRecord.setValue(Int16(age), forKey: "age")
+          }
             
             self.coreDataCtrl.save()
             self.navigationController?.popViewController(animated: true)
         }
     }
     
-}
-
-extension EditPlayerViewController:UIPickerViewDelegate, UIPickerViewDataSource{
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       
-        if let count = teamsClass.getTeams()?.count{
-            return count
-        }
-        return 0
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)-> String? {
-        return self.teamsClass.getTeams()?[row].teamName
-       }
-    
-       // When user selects an option, this function will set the text of the text field to reflect
-       // the selected option.
-       func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.teamNameTF.text = self.teamsClass.getTeams()?[row].teamName
-       }
 }

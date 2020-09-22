@@ -14,6 +14,7 @@ class TeamsViewController: UIViewController {
     @IBOutlet weak var teamsTableView: UITableView!
     private let coreDataCtr = CoreDataController.shared
     let cellIdentifier = "teamCell"
+    
     lazy var fetchResultCtrl: NSFetchedResultsController = { ()->NSFetchedResultsController<Team> in
         
         let fetchedRequest = Team.fetchRequest() as NSFetchRequest<Team>
@@ -41,12 +42,6 @@ class TeamsViewController: UIViewController {
     }
     
     @IBAction func addNewTeam(_ sender: UIButton) {
-        
-    }
-    
-    func getTeams() -> [Team]? {
-        let teams = self.fetchResultCtrl.fetchedObjects
-        return teams
     }
 }
 
